@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-const PageHero = ({title}) => {
+const PageHero = ({title, product}) => {
   return <Wrapper>
     <div className='section-center'>
       <h3>
-        <Link to='/'>Home</Link> / {title}
+        <Link to='/'>Home</Link> 
+         {product && <Link to="/products">/ Products</Link>}
+         / {title}
       </h3>
     </div>
   </Wrapper>
@@ -14,10 +16,10 @@ const PageHero = ({title}) => {
 const Wrapper = styled.section`
   background: var(--clr-primary-10);
   width: 100%;
-  min-height: 15vh;
+  min-height: 20vh;
   display: flex;
   align-items: center;
-
+  text-transform:capitalize;
   color: var(--clr-primary-1);
   a {
     color: var(--clr-primary-3);

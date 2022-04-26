@@ -4,21 +4,34 @@ import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-const Product = () => {
-  return <h4>product</h4>
+const Product = ({image, name, price, id}) => {
+  return <Wrapper>
+    <div className="container">
+      <img src={image} alt={name} />
+      <Link to={`/products/${id}`} className="link">
+        <FaSearch/>
+      </Link>
+    </div>
+    <footer>
+      <h5>{name}</h5>
+      <p>{formatPrice(price)}</p>
+    </footer>
+  </Wrapper>
 }
 
 const Wrapper = styled.article`
+  border:1px solid var(--clr-primary-5);
+  border-radius:var(--radius);
   .container {
     position: relative;
     background: var(--clr-black);
-    border-radius: var(--radius);
+    border-radius: var(--radius) var(--radius) 0 0;
   }
   img {
     width: 100%;
     display: block;
     object-fit: cover;
-    border-radius: var(--radius);
+    border-radius:5px 5px 0 0;
     transition: var(--transition);
   }
   .link {
@@ -48,7 +61,9 @@ const Wrapper = styled.article`
     opacity: 1;
   }
   footer {
-    margin-top: 1rem;
+    border-top:0;
+    margin-top: 0px;
+    padding:5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +71,7 @@ const Wrapper = styled.article`
   footer h5,
   footer p {
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   footer p {
