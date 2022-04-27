@@ -69,6 +69,9 @@ const Wrapper = styled.section`
     }
     .name-price{
       display:block;
+    }
+    img {
+    width: 300px;
   }
   }
 `

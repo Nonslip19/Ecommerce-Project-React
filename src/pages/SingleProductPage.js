@@ -104,6 +104,7 @@ const Wrapper = styled.main`
     max-width: 45em;
   }
   .info {
+    margin-bottom: 0.7rem;
     text-transform: capitalize;
     width: 300px;
     display: grid;
