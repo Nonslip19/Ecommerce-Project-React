@@ -9,7 +9,7 @@ const Sort = () => {
     setGridView,
     setListView,
     sort,
-    updateSort,
+    updateSort
   } = useFilterContext()
   return (
     <Wrapper>
